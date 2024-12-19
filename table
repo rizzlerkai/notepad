@@ -104,7 +104,7 @@ getgenv().Settings = {
             ["Checks"] = {"Wall", "Knocked"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
             ["Custom Size"] = {
                 ["Enabled"] = (true),
-                ["Value"] = (3)
+                ["Value"] = (3) --// change triggerbot hitbox size
             },
             ["Delay"] = {
                 ["Enabled"] = (false),
