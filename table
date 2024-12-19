@@ -1,13 +1,15 @@
-local Settings = {
+script_key="your key";
+
+getgenv().Settings = {
     ["Combat"] = {
         ["Enabled"] = (true),
         ["Prediction"] = (0.125),
         ["Aim Part"] = ("HumanoidRootPart"),
         ["Closest Body Part"] = (true),
-        ["Closest Point"] = (false),
+        ["Closest Point"] = (false), --// not working rn
         ["Checks"] = {"Knocked"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
         ["Auto Prediction"] = {
-            ["Enabled"] = (false),
+            ["Enabled"] = (true),
             ["Predictions"] = { --// NOTE: YOU CAN ADD YOUR OWN PING WITH YOUR OWN SET, THIS IS JUST AN EXAMPLE
                 [10] = (0.114237),
                 [20] = (0.12),
@@ -47,7 +49,7 @@ local Settings = {
                 ["Max Curve"] = (10)
             },
             ["Resolver"] = {
-                ["Enabled"] = (false),
+                ["Enabled"] = (true),
                 ["Update Time"] = (10) --// 10 looks the most legit one, 100 for blatant you can still customize it ofc
             },
             ["Air Offset"] = {
@@ -72,7 +74,7 @@ local Settings = {
                 ["Enabled"] = (true),
                 ["Accuracy"] = (10), --// the higher, the more it will predict, will cause more lag tho
                 ["Visualize"] = {
-                    ["Enabled"] = (false),
+                    ["Enabled"] = (false), --// fps killer
                     ["Color"] = (Color3.new(1, 1, 1)),
                     ["Transparency"] = (1),
                     ["Thickness"] = (2),
@@ -81,7 +83,7 @@ local Settings = {
             },
             ["Field Of View"] = {
                 ["Enabled"] = (true),
-                ["Radius"] = (25),
+                ["Radius"] = (20),
                 ["Specific Guns"] = {
                     ["Enabled"] = (false),
                     ["Guns"] = {
@@ -98,14 +100,19 @@ local Settings = {
         },
         ["Triggerbot"] = {
             ["Enabled"] = (true),
+            ["Keybind"] = ("C"),
             ["Checks"] = {"Wall"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
+            ["Custom Size"] = {
+                ["Enabled"] = (true),
+                ["Value"] = (9)
+            },
             ["Delay"] = {
                 ["Enabled"] = (false),
                 ["Value"] = (0.5)
             },
         },
         ["Aim Assist"] = {
-            ["Enabled"] = (false),
+            ["Enabled"] = (true),
             ["Keybind"] = ("T"),
             ["Smoothing"] = {
                 ["Enabled"] = (false),
@@ -187,10 +194,7 @@ local Settings = {
             ["Keybind"] = ("T"),
             ["Duration"] = (0.5)
         },
-        ["Memory Spoofer"] = {
-            ["Enabled"] = (true),
-            ["Minimum"] = (1000),
-            ["Maximum"] = (2000)
-        }
     }
 };
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/13267d4235e346f1b9b8b48eed101406.lua"))()
