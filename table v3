@@ -1,0 +1,207 @@
+script_key="enter key here";
+local Settings = {
+    ["Combat"] = {
+        ["Enabled"] = (true), --// disable if wanting to play dahood with hitbox expander
+        ["Prediction"] = (0.125),
+        ["Aim Part"] = ("HumanoidRootPart"),
+        ["Closest Body Part"] = (true),
+        ["Closest Point"] = (false),
+        ["Checks"] = {"Knocked", "Wall"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
+        ["Auto Prediction"] = {
+            ["Enabled"] = (false),
+            ["Predictions"] = { --// NOTE: YOU CAN ADD YOUR OWN PING WITH YOUR OWN SET, THIS IS JUST AN EXAMPLE
+                [10] = (0.114237),
+                [20] = (0.12),
+                [30] = (0.1225),
+                [40] = (0.1259910),
+                [50] = (0.127668),
+                [60] = (0.1229),
+                [70] = (0.128),
+                [80] = (0.128),
+                [90] = (0.129),
+                [100] = (0.130),
+                [110] = (0.131),
+                [120] = (0.1452375),
+                [130] = (0.1482375),
+                [140] = (0.15175864),
+                [150] = (0.15382643),
+                [160] = (0.15516732),
+                [170] = (0.15873582),
+                [180] = (0.165561),
+                [190] = (0.161801522),
+                [200] = (0.168728162),
+                [210] = (0.1712),
+                [220] = (0.1746),
+                [230] = (0.18321),
+                [240] = (0.185),
+                [250] = (0.18742000000016),
+            }
+        },
+        ["Anti Ground Shots"] = {
+            ["Enabled"] = (true),
+            ["Dampening Factor"] = (1) --// a value from 0.1 to 1, 1 is the most legit one
+        },
+        ["Silent Aim"] = {
+            ["Enabled"] = (true),
+            ["Anti Curve"] = { --// this is just gonna stop the silent aim when you're curving
+                ["Enabled"] = (false),
+                ["Max Curve"] = (10)
+            },
+            ["Resolver"] = {
+                ["Enabled"] = (false),
+                ["Update Time"] = (10) --// 10 looks the most legit one, 100 for blatant you can still customize it ofc
+            },
+            ["Air Offset"] = {
+                ["Enabled"] = (true),
+                ["Only On Falling"] = (true),
+                ["Offsets"] = {
+                    ["X"] = (0),
+                    ["Y"] = (0.03),
+                }
+            },
+            ["Hit Chance"] = {
+                ["Enabled"] = (false),
+                ["Value"] = (30),
+                ["Specified Guns"] = {
+                    ["Enabled"] = (false),
+                    ["Guns"] = {
+                        ["[TacticalShotgun]"] = (60)
+                    }
+                }
+            },
+            ["Trajectory"] = {
+                ["Enabled"] = (true),
+                ["Accuracy"] = (10), --// the higher, the more it will predict, will cause more lag tho
+                ["Visualize"] = {
+                    ["Enabled"] = (false),
+                    ["Color"] = (Color3.new(1, 1, 1)),
+                
+                    ["Transparency"] = (1),
+                    ["Thickness"] = (2),
+                    ["Lifetime"] = (5)
+                }
+            },
+            ["Field Of View"] = {
+                ["Enabled"] = (true), --// disable for target mode
+                ["Radius"] = (6),
+                ["Specific Guns"] = {
+                    ["Enabled"] = (false),
+                    ["Guns"] = {
+                        ["[TacticalShotgun]"] = (60)
+                    }
+                },
+                ["Visualize"] = {
+                    ["Enabled"] = (false),
+                    ["Color"] = (Color3.new(1, 1, 1)),
+                    ["Transparency"] = (1),
+                    ["Thickness"] = (1)
+                }
+            }
+        },
+        ["Triggerbot"] = {
+            ["Enabled"] = (true),
+            ["Keybind"] = ("C"),
+            ["Checks"] = {"Knocked"}, --// "Knocked", "Vehicle", "Grabbed", "Friend"
+            ["Custom Size"] = {
+                ["Enabled"] = (true),
+                ["Value"] = (3)
+            },
+            ["Delay"] = {
+                ["Enabled"] = (true),
+                ["Value"] = (0.05)
+            },
+			["Hitbox Expander"] = {
+				["Enabled"] = (true), --// only works on dahood
+				["Keybind"] = ("T"),
+				["Value"] = (5),
+				["Visible"] = (false),
+				["Notification"] = (true)
+			}
+        },
+        ["Aim Assist"] = {
+            ["Enabled"] = (false),
+            ["Keybind"] = ("V"),
+            ["Smoothing"] = {
+                ["Enabled"] = (true),
+                ["Value"] = (0.1),
+                ["Easing Style"] = ("Linear"), --// https://create.roblox.com/docs/reference/engine/enums/EasingStyle
+                ["Easing Direction"] = ("In"), --// https://create.roblox.com/docs/reference/engine/enums/EasingDirection
+            },
+            ["Field Of View"] = {
+                ["Enabled"] = (false),
+                ["Radius"] = (25),
+                ["Specific Guns"] = {
+                    ["Enabled"] = (true),
+                    ["Guns"] = {
+                        ["[TacticalShotgun]"] = (60)
+                    }
+                },
+                ["Visualize"] = {
+                    ["Enabled"] = (false),
+                    ["Color"] = (Color3.new(1, 1, 1)),
+                    ["Transparency"] = (1), 
+                    ["Filled"] = (false)
+                }
+            },
+            ["Resolver"] = {
+                ["Enabled"] = (false),
+                ["Update Time"] = (10) --// 10 looks the most legit one, 100 for blatant you can still customize it ofc
+            },
+            ["Air Offset"] = {
+                ["Enabled"] = (false),
+                ["Only On Falling"] = (true),
+                ["Offsets"] = {
+                    ["X"] = (0),
+                    ["Y"] = (0.04),
+                }
+            },
+            ["Shake"] = {
+                ["Enabled"] = (false),
+                ["Amount"] = {
+                    ["X"] = (2),
+                    ["Y"] = (2),
+                }
+            }
+        },
+    },
+    ["Visuals"] = {
+        ["Velocity FOV"] = {
+            ["Enabled"] = (false),
+            ["Max Radius"] = (100),
+            ["Minimum Radius"] = (0), --// 0 is recommended
+            ["Color"] = (Color3.new(1, 1, 1)),
+            ["Transparency"] = (0.3),
+            ["Thickness"] = (1),
+        },
+        ["Text"] = {
+            ["Enabled"] = (false),
+            ["Outline"] = (false),
+            ["Color"] = (Color3.new(1, 1, 1)),
+            ["Size"] = (16),
+            ["Font"] = (2),
+            ["Y Offset"] = (60),
+            ["Text"] = ("") --// ${name} is your username, ${display_name} for the display name you also also use ${discord_name} for your discord username
+        }
+    },
+    ["Misc"] = {
+        ["Hide Visuals On Execution"] = (false),
+        ["Only Load When Window Not Active"] = (false), --// this will make the script only load when the roblox window is NOT focussed
+        ["Hide Visuals"] = {
+            ["Enabled"] = (false),
+            ["Keybind"] = ("B")
+        },
+        ["Close Game"] = {
+            ["Enabled"] = (false),
+            ["Keybind"] = ("T"),
+            ["Use Delay"] = (true),
+            ["Delay"] = (2)
+        },
+        ["Fake Spike"] = {
+            ["Enabled"] = (false),
+            ["Keybind"] = ("T"),
+            ["Duration"] = (0.5)
+        },
+    }
+};
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/13267d4235e346f1b9b8b48eed101406.lua"))()
