@@ -1,15 +1,13 @@
-script_key="your key";
-
-getgenv().Settings = {
+local Settings = {
     ["Combat"] = {
-        ["Enabled"] = (true),
+        ["Enabled"] = (true), --// disable if wanting to play dahood with hitbox expander
         ["Prediction"] = (0.125),
         ["Aim Part"] = ("HumanoidRootPart"),
         ["Closest Body Part"] = (true),
-        ["Closest Point"] = (false), --// not working rn
-        ["Checks"] = {"Wall"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
+        ["Closest Point"] = (false),
+        ["Checks"] = {"Knocked", "Wall"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
         ["Auto Prediction"] = {
-            ["Enabled"] = (true),
+            ["Enabled"] = (false),
             ["Predictions"] = { --// NOTE: YOU CAN ADD YOUR OWN PING WITH YOUR OWN SET, THIS IS JUST AN EXAMPLE
                 [10] = (0.114237),
                 [20] = (0.12),
@@ -49,15 +47,15 @@ getgenv().Settings = {
                 ["Max Curve"] = (10)
             },
             ["Resolver"] = {
-                ["Enabled"] = (true),
+                ["Enabled"] = (false),
                 ["Update Time"] = (10) --// 10 looks the most legit one, 100 for blatant you can still customize it ofc
             },
             ["Air Offset"] = {
-                ["Enabled"] = (false),
+                ["Enabled"] = (true),
                 ["Only On Falling"] = (true),
                 ["Offsets"] = {
                     ["X"] = (0),
-                    ["Y"] = (0.04),
+                    ["Y"] = (0.03),
                 }
             },
             ["Hit Chance"] = {
@@ -74,16 +72,17 @@ getgenv().Settings = {
                 ["Enabled"] = (true),
                 ["Accuracy"] = (10), --// the higher, the more it will predict, will cause more lag tho
                 ["Visualize"] = {
-                    ["Enabled"] = (false), --// fps killer
+                    ["Enabled"] = (false),
                     ["Color"] = (Color3.new(1, 1, 1)),
+                
                     ["Transparency"] = (1),
                     ["Thickness"] = (2),
                     ["Lifetime"] = (5)
                 }
             },
             ["Field Of View"] = {
-                ["Enabled"] = (true),
-                ["Radius"] = (20),
+                ["Enabled"] = (true), --// disable for target mode
+                ["Radius"] = (6),
                 ["Specific Guns"] = {
                     ["Enabled"] = (false),
                     ["Guns"] = {
@@ -101,21 +100,28 @@ getgenv().Settings = {
         ["Triggerbot"] = {
             ["Enabled"] = (true),
             ["Keybind"] = ("C"),
-            ["Checks"] = {"Wall"}, --// "Knocked", "Vehicle", "Grabbed", "Friend", "Wall"
+            ["Checks"] = {"Knocked"}, --// "Knocked", "Vehicle", "Grabbed", "Friend"
             ["Custom Size"] = {
                 ["Enabled"] = (true),
-                ["Value"] = (3) --// change triggerbot hitbox size
+                ["Value"] = (3)
             },
             ["Delay"] = {
-                ["Enabled"] = (false),
-                ["Value"] = (0.5)
+                ["Enabled"] = (true),
+                ["Value"] = (0.05)
             },
+			["Hitbox Expander"] = {
+				["Enabled"] = (true), --// only works on dahood
+				["Keybind"] = ("T"),
+				["Value"] = (5),
+				["Visible"] = (false),
+				["Notification"] = (true)
+			}
         },
         ["Aim Assist"] = {
-            ["Enabled"] = (true),
-            ["Keybind"] = ("T"),
+            ["Enabled"] = (false),
+            ["Keybind"] = ("V"),
             ["Smoothing"] = {
-                ["Enabled"] = (false),
+                ["Enabled"] = (true),
                 ["Value"] = (0.1),
                 ["Easing Style"] = ("Linear"), --// https://create.roblox.com/docs/reference/engine/enums/EasingStyle
                 ["Easing Direction"] = ("In"), --// https://create.roblox.com/docs/reference/engine/enums/EasingDirection
