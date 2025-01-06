@@ -1,3 +1,4 @@
+script_key="enter key here";
 local Settings = {
     ["Combat"] = {
         ["Enabled"] = (true), --// disable if wanting to play dahood with hitbox expander
